@@ -45,8 +45,9 @@ router.get('/', function(req, res, next) {
 			"和泰Line簡易後台":result[6],
 			"ServiceBot後台":result[7]
 		}
+		var time_str = new Date(Date.now()+8*3600*1000).toISOString().replace("T"," ").split(".")[0]
 		let output_str = 
-		'<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF8"><title>狀態們</title><style></style></head><body>'+
+		'<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF8"><title>狀態們</title><style></style></head><body><h3>資料時間戳:'+time_str+'</h3>'+
 			produce_table(dict_1,url_list_1) + 
 			produce_table(dict_2,url_list_2) + 
 			produce_table(dict_3,url_list_3)+
